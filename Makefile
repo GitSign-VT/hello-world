@@ -1,12 +1,14 @@
+objects = calc.c 
 CC=gcc
-source_files = test.c
+CFLAGS = -g
+source_files = calc.c
 
-hello : hello.o 
+all : hello.o 
 	echo "Objects Hello World"
 	$(CC) $(source_files) -o hello
 
-hello.o : test.c 
+hello.o : calc.c 
 	$(CC) -c $(source_files) -o hello.o
 
 clean: 
-	rm hello
+	rm -rf hello*
